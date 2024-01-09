@@ -1,0 +1,51 @@
+<form method="post" (ngSubmit)="onSubmit()">
+    <br>
+    <h1>Identificación</h1>
+    <br>
+    
+    <input type="text" name="usuarioNombre"  [(ngModel)]= usuario.usuarioNombre size="30" maxlength="30" placeholder="Nombre" required id="nombre">
+    <input type="text" name="usuarioApellido"  [(ngModel)]= usuario.usuarioApellido size="30" maxlength="30" placeholder="Apellido" required id="apellido">
+    <input type="text" name="usuarioDni" size="30" [(ngModel)]= usuario.usuarioDni maxlength="30" placeholder="DNI" required id="dni">
+    <input type="text" name="usuarioTelefono" size="30" [(ngModel)]= usuario.usuarioTelefono maxlength="30" placeholder="Teléfono" required id="telefono">       
+    <input type="text" name="usuarioEmail" size="30" [(ngModel)]= usuario.usuarioEmail maxlength="30" placeholder="Email" required id="email">       
+    <input type="text" name="usuarioContrasenia" size="30" [(ngModel)]= usuario.usuarioContrasenia maxlength="30" placeholder="Contraseña" required id="contrasenia">       
+    
+    <h4>Selecciona tu compañía de seguros</h4>
+ <select name="seguros" id="seguro">
+        <option value="" selected disabled hidden>Selecciona una opción</option>
+        <option value="adeslas">Adeslas</option>
+        <option value="axa">AXA</option>
+        <option value="aegon">Aegon</option>
+        <option value="mapfre">Mapfre</option>
+        <option value="asisa">Asisa</option>
+        <option value="sanitas">Sanitas</option>
+        <option value="dkv">DKV</option>
+        <option value="no">No tengo un seguro contratado</option>
+    </select> 
+    
+    <h1>Datos de consulta presencial</h1>
+    <h4>Selecciona la especialidad que deseas solicitar</h4>
+
+    <select name="especialidades" id="especialidad" (click)="escogerEspecialidad()" id="especialidad" >
+        <option value="" selected disabled hidden>Selecciona una opción</option>
+        <option value="cardiologia">Cardiología</option>
+        <option value="pediatria">Pediatría</option>
+        <option value="neurologia">Neurología</option>
+        <option value="hematologia">Hematología</option>
+        <option value="analisis">Análisis clínicos</option>
+    </select>
+    
+
+    <p>Seleccione el médico al que desea acudir</p>
+
+    <select name="medicos" id="medico">
+        <option value="" selected disabled hidden>Selecciona una opción</option>
+   <!--crear por script las opciones -->
+    </select>
+
+    <h1>Fecha de la cita</h1>
+    <input type="date" name="fecha" min="2023-06-01" max="2023-06-30" id="fecha"><br>
+
+
+    <button id="botdata" type="submit" >Enviar</button>
+</form>
